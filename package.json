@@ -1,6 +1,6 @@
 {
   "name": "llm-cost-guard",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Drop-in middleware and wrapper for tracking LLM API spend with budgets and kill switches.",
   "author": "darksol",
   "license": "MIT",

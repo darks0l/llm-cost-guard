@@ -28,6 +28,21 @@ describe("pricing", () => {
     });
   });
 
+  it("includes latest flagship models", () => {
+    expect(getModelPricing("gpt-5.2-pro", BUILT_IN_PRICING)).toEqual({
+      inputPerMillionUsd: 21,
+      outputPerMillionUsd: 168
+    });
+    expect(getModelPricing("gemini-3-pro", BUILT_IN_PRICING)).toEqual({
+      inputPerMillionUsd: 2,
+      outputPerMillionUsd: 12
+    });
+    expect(getModelPricing("claude-haiku-4-5", BUILT_IN_PRICING)).toEqual({
+      inputPerMillionUsd: 1,
+      outputPerMillionUsd: 5
+    });
+  });
+
   it("calculates token cost correctly", () => {
     const cost = calculateCostUsd("gpt-4o-mini", 500_000, 250_000, BUILT_IN_PRICING);
     expect(cost).toBeCloseTo(0.225, 6);
