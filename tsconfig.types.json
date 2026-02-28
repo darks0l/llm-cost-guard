@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ES2022",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "outDir": "dist/types"
+  },
+  "include": ["src/**/*.ts"]
+}

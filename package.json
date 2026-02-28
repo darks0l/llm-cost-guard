@@ -1,0 +1,59 @@
+{
+  "name": "llm-cost-guard",
+  "version": "1.0.0",
+  "description": "Drop-in middleware and wrapper for tracking LLM API spend with budgets and kill switches.",
+  "author": "darksol",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./middleware": {
+      "types": "./dist/types/middleware.d.ts",
+      "import": "./dist/esm/middleware.js",
+      "require": "./dist/cjs/middleware.js"
+    },
+    "./pricing": {
+      "types": "./dist/types/pricing.d.ts",
+      "import": "./dist/esm/pricing.js",
+      "require": "./dist/cjs/pricing.js"
+    },
+    "./storage": {
+      "types": "./dist/types/storage.d.ts",
+      "import": "./dist/esm/storage.js",
+      "require": "./dist/cjs/storage.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "llm-cost-guard": "./dist/cjs/cli.js"
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && node scripts/write-cjs-package.mjs",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
