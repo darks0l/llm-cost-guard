@@ -1,7 +1,7 @@
 {
   "name": "llm-cost-guard",
-  "version": "1.2.0",
-  "description": "Drop-in middleware and wrapper for tracking LLM API spend with budgets and kill switches.",
+  "version": "1.2.1",
+  "description": "Drop-in spend tracking, rolling budgets, and kill switches for LLM API calls.",
   "author": "darksol",
   "license": "MIT",
   "type": "module",
@@ -39,6 +39,14 @@
   ],
   "bin": {
     "llm-cost-guard": "./dist/cjs/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darks0l/llm-cost-guard.git"
+  },
+  "homepage": "https://github.com/darks0l/llm-cost-guard#readme",
+  "bugs": {
+    "url": "https://github.com/darks0l/llm-cost-guard/issues"
   },
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",

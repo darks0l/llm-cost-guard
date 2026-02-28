@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## v1.2.1
+
+- Polished README to SHIP standard structure and removed duplicated/stale sections.
+- Added DARKSOL logo asset + branded README hero.
+- Tightened package metadata (`repository`, `homepage`, `bugs`) and description copy.
+- Re-verified install, test, and build flow.
+
 ## v1.2.0
 
 - Expanded pricing catalog to 46 models with verified February 2026 rates.
