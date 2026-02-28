@@ -24,9 +24,9 @@ describe("guard", () => {
 
     guard.onBudgetAlert((alert) => alerts.push(alert.thresholdPercent));
 
-    await guard.track({ model: "gpt-4o", inputTokens: 160_000, outputTokens: 0 });
-    await guard.track({ model: "gpt-4o", inputTokens: 20_000, outputTokens: 0 });
-    await guard.track({ model: "gpt-4o", inputTokens: 20_000, outputTokens: 0 });
+    await guard.track({ model: "gpt-4o", inputTokens: 320_000, outputTokens: 0 });
+    await guard.track({ model: "gpt-4o", inputTokens: 40_000, outputTokens: 0 });
+    await guard.track({ model: "gpt-4o", inputTokens: 40_000, outputTokens: 0 });
 
     expect(alerts).toEqual([80, 90, 100]);
   });

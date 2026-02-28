@@ -28,6 +28,38 @@ function matchesFilter(event: UsageEvent, filter?: StorageQuery): boolean {
   return true;
 }
 
+function lowerBoundByCreatedAt(events: UsageEvent[], target: number): number {
+  let low = 0;
+  let high = events.length;
+
+  while (low < high) {
+    const mid = low + Math.floor((high - low) / 2);
+    if (events[mid].createdAt < target) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+
+  return low;
+}
+
+function upperBoundByCreatedAt(events: UsageEvent[], target: number): number {
+  let low = 0;
+  let high = events.length;
+
+  while (low < high) {
+    const mid = low + Math.floor((high - low) / 2);
+    if (events[mid].createdAt <= target) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+
+  return low;
+}
+
 export class MemoryStorageAdapter implements StorageAdapter {
   private events: UsageEvent[] = [];
 
@@ -36,7 +68,20 @@ export class MemoryStorageAdapter implements StorageAdapter {
   }
 
   list(filter?: StorageQuery): UsageEvent[] {
-    return this.events.filter((event) => matchesFilter(event, filter));
+    const hasSince = typeof filter?.since === "number";
+    const hasUntil = typeof filter?.until === "number";
+    const startIndex = hasSince ? lowerBoundByCreatedAt(this.events, filter.since as number) : 0;
+    const endExclusive = hasUntil ? upperBoundByCreatedAt(this.events, filter.until as number) : this.events.length;
+
+    const result: UsageEvent[] = [];
+    for (let i = startIndex; i < endExclusive; i += 1) {
+      const event = this.events[i];
+      if (matchesFilter(event, filter)) {
+        result.push(event);
+      }
+    }
+
+    return result;
   }
 
   reset(): void {
