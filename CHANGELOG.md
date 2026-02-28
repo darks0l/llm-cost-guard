@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented in this file.
 
+## v1.2.2
+
+- Security: upgraded `vitest` from `^2.1.8` to `^3.2.4` to pull in non-vulnerable `vite`/`vite-node`/`esbuild` chain.
+- Resolved 5 moderate `npm audit` vulnerabilities (`vitest`, `@vitest/mocker`, `vite`, `vite-node`, `esbuild`).
+- Re-ran `npm ci`, `npm test`, and `npm run build` after the dependency update.
+
 ## v1.2.1
 
 - Polished README to SHIP standard structure and removed duplicated/stale sections.
