@@ -2,6 +2,10 @@ import { ModelPricing, PricingCatalog } from "./types";
 
 export const BUILT_IN_PRICING: PricingCatalog = {
   // ── OpenAI: Flagship ──────────────────────────────────────────────
+  "gpt-5.4-pro": { inputPerMillionUsd: 28, outputPerMillionUsd: 224 },
+  "gpt-5.4": { inputPerMillionUsd: 2.50, outputPerMillionUsd: 15 },
+  "gpt-5.4-mini": { inputPerMillionUsd: 0.75, outputPerMillionUsd: 4.50 },
+  "gpt-5.4-nano": { inputPerMillionUsd: 0.20, outputPerMillionUsd: 1.25 },
   "gpt-5.2-pro": { inputPerMillionUsd: 21, outputPerMillionUsd: 168 },
   "gpt-5.2": { inputPerMillionUsd: 1.75, outputPerMillionUsd: 14 },
   "gpt-5": { inputPerMillionUsd: 1.25, outputPerMillionUsd: 10 },
@@ -27,6 +31,8 @@ export const BUILT_IN_PRICING: PricingCatalog = {
   "gpt-realtime-mini": { inputPerMillionUsd: 0.6, outputPerMillionUsd: 2.4 },
 
   // ── Anthropic: Claude 4.x ─────────────────────────────────────────
+  "claude-opus-4-7": { inputPerMillionUsd: 5, outputPerMillionUsd: 25 },
+  "claude-opus-4-1": { inputPerMillionUsd: 15, outputPerMillionUsd: 75 },
   "claude-opus-4-6": { inputPerMillionUsd: 5, outputPerMillionUsd: 25 },
   "claude-sonnet-4-6": { inputPerMillionUsd: 3, outputPerMillionUsd: 15 },
   "claude-sonnet-4-5": { inputPerMillionUsd: 3, outputPerMillionUsd: 15 },
@@ -43,6 +49,9 @@ export const BUILT_IN_PRICING: PricingCatalog = {
   "claude-3-haiku": { inputPerMillionUsd: 0.25, outputPerMillionUsd: 1.25 },
 
   // ── Google: Gemini 3.x ────────────────────────────────────────────
+  "gemini-3.1-pro": { inputPerMillionUsd: 2, outputPerMillionUsd: 12 },
+  "gemini-3.1-flash": { inputPerMillionUsd: 0.5, outputPerMillionUsd: 3 },
+  "gemini-3.1-flash-lite": { inputPerMillionUsd: 0.25, outputPerMillionUsd: 1.5 },
   "gemini-3-pro": { inputPerMillionUsd: 2, outputPerMillionUsd: 12 },
   "gemini-3-flash": { inputPerMillionUsd: 0.5, outputPerMillionUsd: 3 },
 

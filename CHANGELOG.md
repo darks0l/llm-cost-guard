@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented in this file.
 
+## v1.5.0
+
+- Feature: `--json` and `--csv` flags on `status` command for machine-readable output.
+- Feature: `report` command for computing cost estimates: `llm-cost-guard report --model gpt-5.2 --input 50000 --output 10000 [--json]`.
+- Pricing: Added GPT-5.4, GPT-5.4-mini, GPT-5.4-nano, GPT-5.4-pro.
+- Pricing: Added Claude Opus 4.7 and Claude Opus 4.1.
+- Pricing: Added Gemini 3.1-pro, Gemini 3.1-flash, Gemini 3.1-flash-lite.
+
 ## v1.2.2
 
 - Security: upgraded `vitest` from `^2.1.8` to `^3.2.4` to pull in non-vulnerable `vite`/`vite-node`/`esbuild` chain.

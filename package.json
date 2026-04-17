@@ -1,6 +1,6 @@
 {
   "name": "llm-cost-guard",
-  "version": "1.2.1",
+  "version": "1.5.0",
   "description": "Drop-in spend tracking, rolling budgets, and kill switches for LLM API calls.",
   "author": "darksol",
   "license": "MIT",
